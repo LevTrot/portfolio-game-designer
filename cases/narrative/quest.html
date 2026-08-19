@@ -8,24 +8,566 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Кейс — портфолио Льва Литвинцева.">
+          content="Кейс нарративного геймдизайна — квест для фракции «Хранители».">
 
-    <title>Название кейса — Лев Литвинцев</title>
+    <title>Квест «Хранители» — Лев Литвинцев</title>
 
-    <link rel="icon"
-          type="image/png"
-          href="../../assets/icons/logo.png">
+    <link rel="icon" type="image/png" href="../../assets/icons/logo.png">
 
-    <link rel="stylesheet"
-          href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/pages.css">
 
-    <link rel="stylesheet"
-          href="../../css/case.css">
+    <script src="../../js/script.js" defer></script>
 
-    <script
-        src="../../js/script.js"
-        defer>
-    </script>
+    <style>
+
+        /* =========================
+           QUEST CASE
+        ========================= */
+
+        .quest-case {
+            width: min(var(--max-width), 90%);
+            margin: 0 auto;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .quest-hero {
+            min-height: 75vh;
+
+            padding: 180px 0 120px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            max-width: 1050px;
+        }
+
+        .quest-hero h1 {
+            margin-top: 25px;
+
+            font-size: clamp(55px, 8vw, 110px);
+
+            line-height: 0.98;
+
+            letter-spacing: -0.065em;
+        }
+
+        .quest-hero h1 span {
+            color: var(--accent);
+        }
+
+        .quest-description {
+            max-width: 720px;
+
+            margin-top: 40px;
+
+            color: var(--muted);
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        .quest-section {
+            display: grid;
+
+            grid-template-columns: 0.35fr 1fr;
+
+            gap: 80px;
+
+            padding: 100px 0;
+
+            border-top: 1px solid var(--border);
+        }
+
+        .quest-section-title {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 20px;
+        }
+
+        .quest-section-title > span {
+            color: var(--accent);
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+        .quest-section-title h2 {
+            font-size: 24px;
+
+            letter-spacing: -0.03em;
+        }
+
+        .quest-section-content {
+            max-width: 800px;
+        }
+
+        .quest-section-content > p {
+            margin-bottom: 25px;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+        .quest-section-content > p:first-child {
+            color: var(--text);
+        }
+
+
+        /* =========================
+           CONTEXT
+        ========================= */
+
+        .quest-context {
+            margin-top: 50px;
+
+            padding: 30px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+        }
+
+        .quest-context span {
+            display: block;
+
+            margin-bottom: 12px;
+
+            color: var(--accent);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+        }
+
+        .quest-context p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           QUEST FLOW
+        ========================= */
+
+        .quest-flow {
+            display: flex;
+
+            flex-direction: column;
+
+            margin-top: 50px;
+        }
+
+        .quest-step {
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns: 60px 1fr;
+
+            gap: 25px;
+
+            padding-bottom: 45px;
+        }
+
+        .quest-step:not(:last-child)::after {
+            content: "";
+
+            position: absolute;
+
+            left: 29px;
+            top: 42px;
+            bottom: 0;
+
+            width: 1px;
+
+            background: var(--border);
+        }
+
+        .quest-step-number {
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--border);
+
+            background: var(--background);
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            z-index: 2;
+        }
+
+        .quest-step h3 {
+            margin-top: 5px;
+
+            font-size: 22px;
+
+            letter-spacing: -0.035em;
+        }
+
+        .quest-step p {
+            margin-top: 14px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           DECISION
+        ========================= */
+
+        .quest-decision {
+            margin: 15px 0 50px;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+
+            background: var(--surface);
+        }
+
+        .quest-decision-label {
+            display: block;
+
+            margin-bottom: 12px;
+
+            color: var(--accent);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+        }
+
+        .quest-decision h3 {
+            font-size: 22px;
+
+            letter-spacing: -0.035em;
+        }
+
+        .quest-decision p {
+            margin-top: 12px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           BRANCHES
+        ========================= */
+
+        .quest-branches {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 1px;
+
+            margin-top: 30px;
+
+            background: var(--border);
+
+            border: 1px solid var(--border);
+        }
+
+        .quest-branch {
+            padding: 30px;
+
+            background: var(--background);
+        }
+
+        .quest-branch > span {
+            color: var(--accent);
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+        .quest-branch h3 {
+            margin-top: 20px;
+
+            font-size: 20px;
+
+            letter-spacing: -0.03em;
+        }
+
+        .quest-branch p {
+            margin-top: 14px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           ENDINGS
+        ========================= */
+
+        .quest-endings {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+            margin-top: 50px;
+        }
+
+        .quest-ending {
+            display: grid;
+
+            grid-template-columns: 60px 1fr;
+
+            gap: 25px;
+
+            padding: 30px;
+
+            border: 1px solid var(--border);
+
+            background: var(--surface);
+        }
+
+        .quest-ending-number {
+            color: var(--accent);
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+        .quest-ending h3 {
+            font-size: 20px;
+
+            letter-spacing: -0.03em;
+        }
+
+        .quest-ending p {
+            margin-top: 12px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .quest-ending strong {
+            display: block;
+
+            margin-top: 20px;
+
+            color: var(--text);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================
+           DESIGN DECISIONS
+        ========================= */
+
+        .quest-decisions {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 1px;
+
+            margin-top: 50px;
+
+            background: var(--border);
+
+            border: 1px solid var(--border);
+        }
+
+        .quest-decision-item {
+            padding: 35px;
+
+            background: var(--background);
+        }
+
+        .quest-decision-item > span {
+            color: var(--accent);
+
+            font-size: 10px;
+
+            font-weight: 700;
+        }
+
+        .quest-decision-item h3 {
+            max-width: 600px;
+
+            margin-top: 18px;
+
+            font-size: 22px;
+
+            letter-spacing: -0.035em;
+        }
+
+        .quest-decision-item p {
+            max-width: 700px;
+
+            margin-top: 15px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           CONCLUSION
+        ========================= */
+
+        .quest-conclusion {
+            padding: 140px 0 180px;
+
+            border-top: 1px solid var(--border);
+
+            max-width: 1000px;
+        }
+
+        .quest-conclusion h2 {
+            margin-top: 25px;
+
+            font-size: clamp(38px, 5vw, 65px);
+
+            line-height: 1.05;
+
+            letter-spacing: -0.05em;
+        }
+
+        .quest-conclusion h2 span {
+            color: var(--muted);
+        }
+
+        .quest-conclusion p {
+            max-width: 700px;
+
+            margin-top: 30px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .quest-hero {
+                min-height: 75vh;
+
+                padding-top: 140px;
+            }
+
+            .quest-hero h1 {
+                font-size: clamp(48px, 13vw, 75px);
+            }
+
+            .quest-description {
+                font-size: 15px;
+            }
+
+            .quest-section {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+                padding: 80px 0;
+            }
+
+            .quest-section-content {
+                max-width: none;
+            }
+
+            .quest-branches {
+                grid-template-columns: 1fr;
+            }
+
+            .quest-step {
+                grid-template-columns: 45px 1fr;
+
+                gap: 18px;
+            }
+
+            .quest-step-number {
+                width: 45px;
+                height: 45px;
+            }
+
+            .quest-step:not(:last-child)::after {
+                left: 22px;
+
+                top: 42px;
+            }
+
+            .quest-ending {
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+            .quest-conclusion {
+                padding: 100px 0 140px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -55,9 +597,7 @@
 
     </nav>
 
-    <button
-        class="menu-button"
-        aria-label="Открыть меню">
+    <button class="menu-button" aria-label="Открыть меню">
 
         <span></span>
         <span></span>
@@ -67,211 +607,76 @@
 </header>
 
 
-<main class="case-page">
+<main class="quest-case">
 
 
     <!-- =========================
          HERO
     ========================== -->
 
-    <section class="case-hero">
+    <section class="quest-hero">
 
-        <p class="case-category">
-            01 — VR / Кейс
+        <p class="eyebrow">
+            NARRATIVE DESIGN — CASE 02
         </p>
 
         <h1>
-            Название
-            <span>кейса.</span>
+            Квест
+            <span>«Право на жизнь»</span>
         </h1>
 
-        <p class="case-subtitle">
-            Краткое описание задачи и того,
-            что именно было сделано в рамках проекта.
-            Здесь буквально 2–4 предложения,
-            чтобы работодатель сразу понял суть кейса.
+        <p class="quest-description">
+
+            Квест, раскрывающий внутренний конфликт фракции
+            «Хранители» и ставящий игрока перед выбором,
+            определяющим дальнейшие отношения с организацией.
+
         </p>
 
-
-        <div class="case-meta">
-
-            <div class="case-meta-item">
-
-                <span class="case-meta-label">
-                    Роль
-                </span>
-
-                <span class="case-meta-value">
-                    Game Designer
-                </span>
-
-            </div>
-
-
-            <div class="case-meta-item">
-
-                <span class="case-meta-label">
-                    Проект
-                </span>
-
-                <span class="case-meta-value">
-                    VR-симулятор
-                </span>
-
-            </div>
-
-
-            <div class="case-meta-item">
-
-                <span class="case-meta-label">
-                    Инструменты
-                </span>
-
-                <span class="case-meta-value">
-                    Unity / Miro / Docs
-                </span>
-
-            </div>
-
-        </div>
-
     </section>
 
 
     <!-- =========================
-         COVER
+         01 — CONTEXT
     ========================== -->
 
-    <section class="case-cover">
+    <section class="quest-section">
 
-        <div class="case-cover-image">
+        <div class="quest-section-title">
 
-            <!--
-            ЗАМЕНИ НА КАРТИНКУ
-
-            <img
-                src="../../images/cases/vr/case1/cover.jpg"
-                alt="Описание изображения">
-            -->
-
-            <span class="case-cover-placeholder">
-                ГЛАВНОЕ ИЗОБРАЖЕНИЕ КЕЙСА
-            </span>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         01 — ЗАДАЧА
-    ========================== -->
-
-    <section class="case-section">
-
-        <div class="case-section-title">
-
-            <span class="case-section-number">
-                01
-            </span>
+            <span>01</span>
 
             <h2>
-                Задача
+                Контекст
             </h2>
 
         </div>
 
 
-        <div class="case-section-content">
+        <div class="quest-section-content">
 
             <p>
-                Здесь описывается исходная задача.
-                Что требовалось создать, изменить
-                или решить.
+                Экологические катастрофы сильно изменили привычный мир. Запасы пресной воды на исходе, а контроль над ее источниками становится одной из главных причин конфликтов.
             </p>
 
             <p>
-                Можно добавить контекст проекта,
-                ограничения и основные требования.
+                «Хранители» - влиятельная религиозная организация, контролирующая крупные источники воды в центре доступных территорий.
+                Игрок уже знаком с ними, понимает их
+                отношение к воде как к божеству и успел столкнуться с внутренними
+                противоречиями организации. 
             </p>
 
 
-            <div class="case-tags">
+            <div class="quest-context">
 
-                <span>Механики</span>
-                <span>Сценарий</span>
-                <span>Баланс</span>
-                <span>Документация</span>
+                <span>
+                    Как игрок получает квест
+                </span>
 
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         02 — РЕШЕНИЕ
-    ========================== -->
-
-    <section class="case-section">
-
-        <div class="case-section-title">
-
-            <span class="case-section-number">
-                02
-            </span>
-
-            <h2>
-                Решение
-            </h2>
-
-        </div>
-
-
-        <div class="case-section-content">
-
-            <p>
-                Здесь рассказываем, как именно
-                была решена задача.
-            </p>
-
-            <p>
-                Важно не просто показать результат,
-                а объяснить ход дизайнерского мышления:
-                почему было принято именно такое решение.
-            </p>
-
-
-            <h3>
-                Основной подход
-            </h3>
-
-            <p>
-                Подробное описание решения.
-                Здесь может быть несколько абзацев.
-            </p>
-
-
-            <div class="case-media">
-
-                <div class="case-media-image">
-
-                    <!--
-                    <img
-                        src="../../images/cases/..."
-                        alt="Схема решения">
-                    -->
-
-                    <span class="case-media-placeholder">
-                        МЕСТО ДЛЯ СХЕМЫ / ИЗОБРАЖЕНИЯ
-                    </span>
-
-                </div>
-
-                <p class="case-media-caption">
-                    Подпись к изображению или краткое
-                    объяснение того, что на нём показано.
+                <p>
+                    В поисках новых источников пресной воды для одной из организаций, игрок попадает в плен к их разведчикам. 
+                    После обвинения в шпионаже игрока собираются казнить. Его спасает сын одного из покровителей, который убеждает руководство дать пленнику последний шанс. 
+                    В обмен на жизнь игрок должен искупить свои «грехи», выполняя работу для Хранителей.
                 </p>
 
             </div>
@@ -282,103 +687,194 @@
 
 
     <!-- =========================
-         03 — СИСТЕМА
+         02 — QUEST FLOW
     ========================== -->
 
-    <section class="case-section">
+    <section class="quest-section">
 
-        <div class="case-section-title">
+        <div class="quest-section-title">
 
-            <span class="case-section-number">
-                03
-            </span>
+            <span>02</span>
 
             <h2>
-                Система
+                Структура квеста
             </h2>
 
         </div>
 
 
-        <div class="case-section-content">
+        <div class="quest-section-content">
 
-            <p>
-                Здесь находится основной дизайнерский
-                материал кейса.
-            </p>
+            <div class="quest-flow">
 
 
-            <h3>
-                Как это работает
-            </h3>
+                <div class="quest-step">
 
-            <ul>
+                    <span class="quest-step-number">
+                        01
+                    </span>
 
-                <li>
-                    Первый элемент системы.
-                </li>
+                    <div>
 
-                <li>
-                    Второй элемент системы.
-                </li>
+                        <h3>
+                            Завязка
+                        </h3>
 
-                <li>
-                    Связь между системами.
-                </li>
+                        <p>
+                            Мятежники, которые ранее спасли игрока от смертной казни, теперь просят ответной услуги.
+                            Они мечтают свергнуть нынешних покровителей, а пресную воду превратить в товар, в котором нуждаются все вокруг.
+                            Покровители же желают окончательно превратить Хранителей в религиозный культ, где любое инакомыслие будет жестко пресекаться, а вода доставаться лишь достойным.
+                        </p>
 
-                <li>
-                    Ограничения и условия.
-                </li>
+                    </div>
 
-            </ul>
-
-
-            <div class="case-data">
-
-                <div class="case-data-placeholder">
-                    МЕСТО ДЛЯ ГРАФИКА / ДИАГРАММЫ
                 </div>
 
+
+                <div class="quest-step">
+
+                    <span class="quest-step-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Расследование
+                        </h3>
+
+                        <p>
+                            Мятежники составили предположительные карты, на которых указаны все оставшиеся источники пресной воды в округе. 
+                            Ему остается лишь найти эти источники и убедитсья в наличии серьезной охраны со стороны покровителей. Именно эти источники и есть цель всех организаций.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quest-step">
+
+                    <span class="quest-step-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Ключевой выбор
+                        </h3>
+
+                        <p>
+                            Игрок возвращается к заговорщикам с подтверждением существования источников. Однако разговор показывает, что мятежники не имеют единого плана: часть хочет открыть воду всем, другие видят в ней источник личного богатства.
+                            В этот момент игрок понимает, что конфликт не сводится к выбору между религиозным культом и освободителями. У каждой стороны есть собственные интересы, а последствия решения затронут весь регион.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
             </div>
 
 
-            <div class="case-table-wrapper">
+            <div class="quest-decision">
 
-                <table class="case-table">
+                <span class="quest-decision-label">
+                    Ключевая точка ветвления
+                </span>
 
-                    <thead>
+                <h3>
+                    На чью сторону встанет игрок?
+                </h3>
 
-                        <tr>
-                            <th>Параметр</th>
-                            <th>Значение</th>
-                            <th>Комментарий</th>
-                        </tr>
+                <p>
+                    Покровители хотят сохранить контроль, над водой. 
+                    Жесткий, но справедливый к нуждающемся, а взамен они требуют полного подчинения их воле и богам. 
+                    Мятежники напротив, прикрываясь добрыми намерениями, мечтают стать богатыми землевладельцами, продаваю воду лишь тем, кто предложит за нее достаточно денег, честность и порядок для них чужды.
+                    Однако игрок не обязан быть ни с кем честным. Организации, которые отправили игрока искать источники пресной воды, с радостью помогут игроку уничтожить и тех и друг, оставив все источники себе. 
+                    Но кто знает, какие цели они преследуют, что они будут делать с таким богатством? Быть может игроку стоит стравить все организации между собой, посвеяв полную анархию и наслаждаться этим представлением, словно он серый кардинал?
+                </p>
 
-                    </thead>
+            </div>
 
-                    <tbody>
 
-                        <tr>
-                            <td>Параметр 1</td>
-                            <td>000</td>
-                            <td>Описание</td>
-                        </tr>
+            <div class="quest-branches">
 
-                        <tr>
-                            <td>Параметр 2</td>
-                            <td>000</td>
-                            <td>Описание</td>
-                        </tr>
 
-                        <tr>
-                            <td>Параметр 3</td>
-                            <td>000</td>
-                            <td>Описание</td>
-                        </tr>
+                <div class="quest-branch">
 
-                    </tbody>
+                    <span>
+                        ВЕТКА 01
+                    </span>
 
-                </table>
+                    <h3>
+                        Поддержать Хранителей
+                    </h3>
+
+                    <p>
+                        Игрок получает амнистию и становится публичным героем Хранителей. 
+                        Однако покровители не намерены оставлять в живых игрока, знающего слишком много о внутреннем конфликте организации. 
+                        После устранения заговорщиков игрок становится символом победы Хранителей, но вскоре сам оказывается устранен.
+                    </p>
+
+                </div>
+
+
+                <div class="quest-branch">
+
+                    <span>
+                        ВЕТКА 02
+                    </span>
+
+                    <h3>
+                        Поддержать заговорщиков
+                    </h3>
+
+                    <p>
+                        Игрок может согласиться на мятеж. 
+                        Вместе с заговорщиками он начнет восстание против покровителей и лично примет участие в боях. 
+                        Столкнется с хаосом в командывании мятежников, их неопытностью и противоречивыми взглядами на судьбу орагнизации.
+                    </p>
+
+                </div>
+
+
+                <div class="quest-branch">
+
+                    <span>
+                        ВЕТКА 03
+                    </span>
+
+                    <h3>
+                        Поддержать третью сторону
+                    </h3>
+
+                    <p>
+                        Игрок вправе обмануть обе стороны и использовать организацию со стороны, на которую он выбрал работать по сюжету ранее. 
+                        В таком случае игрок может инсценировать поддержку мятежников, начать конфликт и пока силы будут заняты друг другом, игрок вместе со своей лояльной фракцией сможет занять источники воды.
+                    </p>
+
+                </div>
+
+                <div class="quest-branch">
+
+                    <span>
+                        ВЕТКА 04
+                    </span>
+
+                    <h3>
+                        Действовать самостоятельно
+                    </h3>
+
+                    <p>
+                        Игрок имеет возможность не выбирать никакую сторону в этом споре. 
+                        Он может согласиться поддержать мятежников, подговорить третью сторону вступить в этот конфликт и убедить покровителей, что он точно на их стороне. 
+                        Таким образом, ему удасться обмануть всех и остаться в стороне, не участвуя в конфликте лично.
+                    </p>
+
+                </div>
+
 
             </div>
 
@@ -388,44 +884,277 @@
 
 
     <!-- =========================
-         04 — РЕЗУЛЬТАТ
+         03 — ENDINGS
     ========================== -->
 
-    <section class="case-section">
+    <section class="quest-section">
 
-        <div class="case-section-title">
+        <div class="quest-section-title">
 
-            <span class="case-section-number">
-                04
-            </span>
+            <span>03</span>
 
             <h2>
-                Результат
+                Варианты и последствия
             </h2>
 
         </div>
 
 
-        <div class="case-section-content">
+        <div class="quest-section-content">
 
             <p>
-                Что получилось в результате.
-                Какие изменения произошли после
-                реализации решения.
-            </p>
-
-            <p>
-                Если есть цифры, показатели,
-                сравнительные данные или наблюдения —
-                они размещаются здесь.
+                Каждый вариант решения меняет не только
+                финальную сцену, но и состояние мира, судьбу фракций и отношение персонажей к игроку.
             </p>
 
 
-            <div class="case-note">
+            <div class="quest-endings">
 
-                Здесь можно разместить важное замечание,
-                ограничение по раскрытию информации
-                или пояснение к данным.
+
+                <article class="quest-ending">
+
+                    <span class="quest-ending-number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Сохранение старого порядка
+                        </h3>
+
+                        <p>
+                            Здесь описывается результат выбора
+                            в пользу покровителей и дальнейшая
+                            судьба фракции.
+                        </p>
+
+                        <strong>
+                            Последствие: Хранители становятся еще более закрытым сообществом. 
+                            Оно жестоко, пресекает любое инакомыслие и проводит экспансию в окрестностях. 
+                            Однако пресная вода доходит до каждого уголка захваченных земель, больше никакого дефицита и вечной жажды, только фанатичная вера в богов и полное повеновение.
+                            Игроку же раскрывают, что многие заговорщики - дети покровителей, потому они не могут простить ему их уничтожение. Его причисляют к пантеону богов, ему молятся, о нем слагают легенды, но прежде топят в отравленном источнике. без лишних глаз.
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="quest-ending">
+
+                    <span class="quest-ending-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Реформа «Хранителей»
+                        </h3>
+
+                        <p>
+                            Здесь описывается результат поддержки
+                            заговорщиков и то, как изменяется
+                            организация после их победы.
+                        </p>
+
+                        <strong>
+                            Последствие: После свержения покровителей, Хранители становятся простыми торговцами водой, охраняющей ее запасы всеми доступными средствами. 
+                            Все сторонние организации и общины теперь платят за воду огромные деньги, или предлагают щедрые припасы. 
+                            И пускай внутри организации наступает шаткий мир, некогда единое командование заговорщиков, теперь разделено на враждующие лагеря. 
+                            У каждого свои источники и каждый мечтает забрать чужие. 
+                            И никто не знает, в какой момент пороховая бочка рванет.
+                            Про игрока тоже не забывают. У него отбирают все вещи, за убийство покровителей и отправляют в безжизненную пустыню, с одной лишь бутылкой воды, в награду за его помощь.
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="quest-ending">
+
+                    <span class="quest-ending-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Уничтожение фракции
+                        </h3>
+
+                        <p>
+                            Здесь описывается вариант, при котором
+                            игрок использует конфликт для ликвидации
+                            организации и захвата источников воды.
+                        </p>
+
+                        <strong>
+                            Последствие: Организация со стороны, чьей поддержкой заручился игрок, захватывает все доступные источники воды, пока Хранители заняты внутренним конфликтом.
+                            Вскоре они атакуют оставшихся Хранителей, окончательно разваливая организацию на мелкие качующие общины. 
+                            Воды оказываются лишены все остальные организации, что когда-нибудь перерастет в новый конфликт. 
+                            А победившая организация с каждым днем начинает напоминать Хранителей.
+                            Игрок получает в награду целый источник пресной воды. Но с каждым днем недоверие новых владельцев воды растет к нему все сильнее, пока однажды это не выливается в тихую ликвидацию игрока, под покровом ночи.
+                        </strong>
+
+                    </div>
+
+                </article>
+
+                <article class="quest-ending">
+
+                    <span class="quest-ending-number">
+                        04
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Полная анархия
+                        </h3>
+
+                        <p>
+                            Здесь описывается результат выбора
+                            в пользу лично игрока, против всех фракций.
+                        </p>
+
+                        <strong>
+                            Последствие: Все доступные территории теперь погружены в хаос. 
+                            Фракции бесконечно сражаются между собой, за доступные источники, 
+                            а некогда огромная армия Хранителей, разделена на два враждующих лагеря, втянутое в вечное противостояние, победителей в котором не будет.
+                            Игрок набирает себе припасов и воды на долгие годы вперед, прячется на оссушенном источнике на краю доступных территорий и наблюдает за устроенной анархией, оставаясь нетронутым и всеми забытым в этом конфликте.
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <!-- =========================
+         04 — DESIGN DECISIONS
+    ========================== -->
+
+    <section class="quest-section">
+
+        <div class="quest-section-title">
+
+            <span>04</span>
+
+            <h2>
+                Дизайнерские решения
+            </h2>
+
+        </div>
+
+
+        <div class="quest-section-content">
+
+            <div class="quest-decisions">
+
+
+                <article class="quest-decision-item">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Выбор без очевидно правильной стороны
+                    </h3>
+
+                    <p>
+                        Квест намеренно не предлагает игроку однозначно правильную сторону конфликта.
+                        Хранители ограничивают доступ к воде и используют религиозную идеологию для контроля,
+                        однако обеспечивают порядок и защищают источники.
+                        Заговорщики выступают против существующего режима, но сами не имеют единой цели
+                        и рассматривают воду как потенциальный источник богатства.
+                        
+                        Благодаря этому выбор строится не вокруг поиска «правильного» решения,
+                        а вокруг личных приоритетов игрока и оценки возможных последствий.
+                    </p>
+
+                </article>
+
+
+                <article class="quest-decision-item">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Последствия выбора меняют состояние мира
+                    </h3>
+
+                    <p>
+                       Решение игрока не заканчивается вместе с финальной сценой.
+                        В зависимости от выбранной стороны меняется положение Хранителей,
+                        контроль над источниками воды, отношения между организациями и
+                        дальнейшее развитие региона.
+                        
+                        Такой подход позволяет показать результат выбора не только через
+                        диалог или награду, но и через изменения игрового мира, с которыми
+                        игрок сталкивается после завершения квеста.
+                    </p>
+
+                </article>
+
+
+                <article class="quest-decision-item">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Решение проблемы через разные подходы
+                    </h3>
+
+                    <p>
+                        Игрок не обязан решать конфликт единственным предусмотренным способом.
+                        Он может поддержать одну из сторон напрямую, использовать третью
+                        организацию или попытаться столкнуть противников между собой.
+                        
+                        Это позволяет превратить квест из последовательности обязательных
+                        действий в пространство для самостоятельного принятия решений,
+                        где предыдущие отношения игрока с организациями становятся
+                        инструментом для поиска собственного решения.
+                    </p>
+
+                </article>
+
+                <article class="quest-decision-item">
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        Информация раскрывается постепенно
+                    </h3>
+
+                    <p>
+                        Игрок не получает полную картину конфликта в начале квеста.
+                        Сначала он узнает о существовании источников, затем сталкивается
+                        с интересами заговорщиков, а уже после этого получает возможность
+                        сравнить их цели с позицией покровителей.
+                        
+                        Постепенное раскрытие информации позволяет сохранить неопределенность
+                        до момента выбора и заставляет игрока самостоятельно оценивать
+                        достоверность полученных сведений.
+                    </p>
+
+                </article>
+
 
             </div>
 
@@ -435,42 +1164,26 @@
 
 
     <!-- =========================
-         05 — ВЫВОД
+         CONCLUSION
     ========================== -->
 
-    <section class="case-section">
+    <section class="quest-conclusion">
 
-        <div class="case-section-title">
+        <p class="eyebrow">
+            Итог
+        </p>
 
-            <span class="case-section-number">
-                05
-            </span>
+        <h2>
+            Квест превращает внутренний конфликт фракции
+            <span>в непосредственный опыт игрока.</span>
+        </h2>
 
-            <h2>
-                Итоги
-            </h2>
-
-        </div>
-
-
-        <div class="case-section-content">
-
-            <p>
-                Короткий итог кейса:
-                какую дизайнерскую проблему удалось решить
-                и чему этот пример демонстрирует твои навыки.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <section class="case-bottom">
-
-        <a href="../../pages/vr.html">
-            ← Назад к VR-кейсам
-        </a>
+        <p>
+            Данный кейс является концептуальной работой,
+            созданной специально для портфолио.
+            Квест, персонажи и сюжетные решения не относятся
+            к коммерческому проекту.
+        </p>
 
     </section>
 
@@ -487,36 +1200,19 @@
 
     <div class="fixed-contacts">
 
-        <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer">
-
+        <a href="#" target="_blank" rel="noopener noreferrer">
             HH.ru
-
             <span>↗</span>
-
         </a>
 
-
-        <a
-            href="#"
-            target="_blank"
-            rel="noopener noreferrer">
-
+        <a href="#" target="_blank" rel="noopener noreferrer">
             Telegram
-
             <span>↗</span>
-
         </a>
-
 
         <a href="../../pages/resume.html">
-
             Резюме
-
             <span>↗</span>
-
         </a>
 
     </div>
