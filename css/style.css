@@ -496,9 +496,9 @@ button {
 .card-large .card-image {
     aspect-ratio: 4 / 3;
 }
-
-
 .placeholder-image {
+    position: relative;
+
     background:
         linear-gradient(
             135deg,
@@ -511,6 +511,8 @@ button {
     align-items: flex-end;
 
     padding: 22px;
+
+    overflow: hidden;
 }
 
 
@@ -527,6 +529,26 @@ button {
             transparent 40%,
             rgba(140, 168, 255, 0.08)
         );
+
+    pointer-events: none;
+}
+
+
+.placeholder-image img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    padding: 20px;
+
+    box-sizing: border-box;
 }
 
 
@@ -542,6 +564,13 @@ button {
     letter-spacing: 0.15em;
 }
 
+.case-preview-image {
+    position: relative;
+
+    min-height: 380px;
+
+    overflow: hidden;
+}
 
 .card-content {
     padding: 32px;
@@ -568,6 +597,16 @@ button {
     max-width: 500px;
 
     margin-top: 14px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.p-c {
+
+    margin-top: 5px;
+    margin-bottom: 5px;
 
     color: var(--muted);
 
@@ -799,6 +838,18 @@ button {
 
     .resume-bottom {
         padding: 80px 0 130px;
+    }
+    
+     .case-preview-image {
+        min-height: 250px;
+    }
+
+    .placeholder-image {
+        padding: 16px;
+    }
+
+    .placeholder-image img {
+        padding: 12px;
     }
 }
     /* =========================

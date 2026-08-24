@@ -1,0 +1,1024 @@
+/* =========================
+   VR CASE
+========================= */
+
+.vr-case-page {
+    width: min(var(--max-width), 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.vr-case-hero {
+    min-height: 70vh;
+
+    padding: 180px 0 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vr-case-hero h1 {
+    max-width: 1050px;
+
+    margin-top: 25px;
+
+    font-size: clamp(55px, 8vw, 110px);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.065em;
+}
+
+.vr-case-hero h1 span {
+    color: var(--accent);
+}
+
+.vr-case-description {
+    max-width: 700px;
+
+    margin-top: 40px;
+
+    color: var(--muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN IMAGE
+========================= */
+
+.vr-case-image {
+    width: min(1000px, 100%);
+
+    margin: 0 auto 140px;
+}
+
+.vr-image-placeholder {
+    width: 100%;
+
+    aspect-ratio: 16 / 8;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17171a,
+            #0e0e10
+        );
+
+    border: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    letter-spacing: 0.15em;
+}
+
+.vr-image-caption {
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.vr-section {
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    gap: 80px;
+
+    padding: 100px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.vr-section-title span {
+    display: block;
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    letter-spacing: 0.1em;
+}
+
+.vr-section-title h2 {
+    margin-top: 20px;
+
+    font-size: 34px;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.04em;
+}
+
+.vr-section-content {
+    max-width: 850px;
+}
+
+.vr-section-content > p {
+    max-width: 750px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   GOALS
+========================= */
+
+.vr-goals {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1px;
+
+    margin-top: 60px;
+
+    background: var(--border);
+
+    border: 1px solid var(--border);
+}
+
+.vr-goals article {
+    padding: 35px;
+
+    background: var(--surface);
+}
+
+.vr-goals span,
+.vr-interaction-grid span,
+.vr-feedback-list span,
+.vr-decisions > article > span {
+    display: block;
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    letter-spacing: 0.1em;
+}
+
+.vr-goals h3,
+.vr-interaction-grid h3,
+.vr-decisions h3 {
+    margin-top: 25px;
+
+    font-size: 21px;
+
+    line-height: 1.15;
+}
+
+.vr-goals p,
+.vr-interaction-grid p,
+.vr-feedback-list p,
+.vr-decisions p {
+    margin-top: 15px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   GAMEPLAY FLOW
+========================= */
+
+.vr-flow {
+    display: flex;
+
+    align-items: stretch;
+
+    margin-top: 60px;
+
+    overflow-x: auto;
+
+    padding-bottom: 10px;
+}
+
+.vr-flow-step {
+    min-width: 180px;
+
+    padding: 25px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+}
+
+.vr-flow-step > span {
+    color: var(--accent);
+
+    font-size: 11px;
+
+    letter-spacing: 0.1em;
+}
+
+.vr-flow-step h3 {
+    margin-top: 20px;
+
+    font-size: 17px;
+}
+
+.vr-flow-step p {
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.vr-flow-arrow {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 45px;
+
+    color: var(--accent);
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   INTERACTION
+========================= */
+
+.vr-interaction-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1px;
+
+    margin-top: 50px;
+
+    background: var(--border);
+
+    border: 1px solid var(--border);
+}
+
+.vr-interaction-grid article {
+    padding: 35px;
+
+    background: var(--surface);
+}
+
+
+/* =========================
+   FEEDBACK
+========================= */
+
+.vr-feedback-list {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-top: 50px;
+
+    border-top: 1px solid var(--border);
+}
+
+.vr-feedback-list > div {
+    display: grid;
+
+    grid-template-columns: 60px 160px 1fr;
+
+    gap: 25px;
+
+    align-items: center;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.vr-feedback-list strong {
+    font-size: 15px;
+}
+
+
+/* =========================
+   DESIGN DECISIONS
+========================= */
+
+.vr-decisions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1px;
+
+    background: var(--border);
+
+    border: 1px solid var(--border);
+}
+
+.vr-decisions article {
+    padding: 40px;
+
+    background: var(--surface);
+}
+
+.vr-decisions h3 {
+    max-width: 650px;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.vr-conclusion {
+    padding: 180px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.vr-conclusion h2 {
+    max-width: 900px;
+
+    margin-top: 30px;
+
+    font-size: clamp(38px, 5vw, 65px);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.05em;
+}
+
+.vr-conclusion h2 span {
+    color: var(--accent);
+}
+
+.vr-conclusion > p:last-child {
+    max-width: 650px;
+
+    margin-top: 35px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+/* =========================
+   VR CASE 02
+========================= */
+
+.vr-case-page {
+    width: min(var(--max-width), 90%);
+    margin: 0 auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.vr-case-hero {
+    min-height: 70vh;
+
+    padding: 180px 0 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.vr-case-hero h1 {
+    max-width: 1100px;
+
+    margin-top: 25px;
+
+    font-size: clamp(55px, 8vw, 110px);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.065em;
+}
+
+.vr-case-hero h1 span {
+    color: var(--accent);
+}
+
+.vr-case-description {
+    max-width: 720px;
+
+    margin-top: 40px;
+
+    color: var(--muted);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN IMAGE
+========================= */
+
+.vr-case-main-image {
+    width: 100%;
+
+    margin-bottom: 140px;
+}
+
+.vr-image-placeholder {
+    width: 100%;
+
+    min-height: 500px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #17171a,
+            #0e0e10
+        );
+
+    border: 1px solid var(--border);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255,255,255,0.3);
+
+    font-size: 11px;
+
+    letter-spacing: 0.15em;
+}
+
+.image-caption {
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.vr-case-section {
+    display: grid;
+
+    grid-template-columns: 260px 1fr;
+
+    gap: 80px;
+
+    padding: 100px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.vr-case-section-title {
+    position: relative;
+}
+
+.vr-case-section-title > span {
+    display: block;
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    letter-spacing: 0.12em;
+}
+
+.vr-case-section-title h2 {
+    margin-top: 18px;
+
+    font-size: 36px;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.04em;
+}
+
+.vr-case-section-content {
+    max-width: 850px;
+}
+
+.vr-case-section-content > p {
+    max-width: 760px;
+
+    margin-bottom: 28px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   HIGHLIGHT
+========================= */
+
+.vr-highlight {
+    margin-top: 50px;
+
+    padding: 30px;
+
+    border-left: 2px solid var(--accent);
+
+    background: var(--surface);
+}
+
+.vr-highlight span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+.vr-highlight strong {
+    font-size: 20px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   FLOW
+========================= */
+
+.vr-flow {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    border: 1px solid var(--border);
+}
+
+.vr-flow-step {
+    min-height: 270px;
+
+    padding: 25px;
+
+    border-right: 1px solid var(--border);
+}
+
+.vr-flow-step:last-child {
+    border-right: none;
+}
+
+.vr-flow-step > span {
+    display: block;
+
+    margin-bottom: 50px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    letter-spacing: 0.1em;
+}
+
+.vr-flow-step h3 {
+    margin-bottom: 15px;
+
+    font-size: 17px;
+}
+
+.vr-flow-step p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   TOOLS
+========================= */
+
+.vr-tools-grid {
+    margin-top: 50px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid var(--border);
+
+    border-left: 1px solid var(--border);
+}
+
+.vr-tool {
+    min-height: 220px;
+
+    padding: 30px;
+
+    border-right: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.vr-tool > span {
+    display: block;
+
+    margin-bottom: 35px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+}
+
+.vr-tool h3 {
+    margin-bottom: 15px;
+
+    font-size: 20px;
+}
+
+.vr-tool p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   DESIGN DECISIONS
+========================= */
+
+.vr-decisions {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.vr-decision {
+    padding: 35px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+}
+
+.vr-decision > span {
+    display: block;
+
+    margin-bottom: 30px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+}
+
+.vr-decision h3 {
+    max-width: 650px;
+
+    margin-bottom: 15px;
+
+    font-size: 24px;
+
+    line-height: 1.15;
+}
+
+.vr-decision p {
+    max-width: 700px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   PLAYER EXPERIENCE
+========================= */
+
+.vr-experience {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 50px;
+
+    border: 1px solid var(--border);
+}
+
+.vr-experience-item {
+    min-height: 220px;
+
+    padding: 30px;
+
+    border-right: 1px solid var(--border);
+}
+
+.vr-experience-item:last-child {
+    border-right: none;
+}
+
+.vr-experience-item > span {
+    display: block;
+
+    margin-bottom: 35px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+}
+
+.vr-experience-item strong {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 18px;
+}
+
+.vr-experience-item p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CONCLUSION
+========================= */
+
+.vr-case-conclusion {
+    padding: 160px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.vr-case-conclusion h2 {
+    max-width: 900px;
+
+    margin-top: 25px;
+
+    font-size: clamp(40px, 6vw, 80px);
+
+    line-height: 1;
+
+    letter-spacing: -0.055em;
+}
+
+.vr-case-conclusion h2 span {
+    color: var(--accent);
+}
+
+.vr-case-conclusion > p:last-child {
+    max-width: 650px;
+
+    margin-top: 40px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .vr-case-section {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .vr-flow {
+        grid-template-columns: 1fr;
+    }
+
+    .vr-flow-step {
+        min-height: auto;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .vr-flow-step:last-child {
+        border-bottom: none;
+    }
+
+    .vr-tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vr-experience {
+        grid-template-columns: 1fr;
+    }
+
+    .vr-experience-item {
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .vr-experience-item:last-child {
+        border-bottom: none;
+    }
+
+    .vr-case-main-image {
+        margin-bottom: 80px;
+    }
+
+    .vr-image-placeholder {
+        min-height: 300px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .vr-case-hero {
+        min-height: 75vh;
+
+        padding-top: 140px;
+    }
+
+    .vr-case-hero h1 {
+        font-size: clamp(48px, 13vw, 75px);
+    }
+
+    .vr-case-description {
+        font-size: 15px;
+    }
+
+    .vr-case-section {
+        padding: 75px 0;
+    }
+
+    .vr-case-section-title h2 {
+        font-size: 30px;
+    }
+
+    .vr-decision {
+        padding: 25px;
+    }
+
+    .vr-decision h3 {
+        font-size: 21px;
+    }
+
+    .vr-case-conclusion {
+        padding: 100px 0;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .vr-case-hero {
+        min-height: 75vh;
+
+        padding-top: 140px;
+    }
+
+
+    .vr-case-hero h1 {
+        font-size: clamp(48px, 13vw, 75px);
+    }
+
+
+    .vr-case-description {
+        font-size: 15px;
+    }
+
+
+    .vr-case-image {
+        margin-bottom: 80px;
+    }
+
+
+    .vr-image-placeholder {
+        aspect-ratio: 4 / 3;
+    }
+
+
+    .vr-section {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 70px 0;
+    }
+
+
+    .vr-section-title h2 {
+        font-size: 30px;
+    }
+
+
+    .vr-goals,
+    .vr-interaction-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .vr-flow {
+        margin-top: 40px;
+    }
+
+
+    .vr-flow-step {
+        min-width: 160px;
+    }
+
+
+    .vr-feedback-list > div {
+        grid-template-columns: 40px 1fr;
+
+        gap: 15px;
+    }
+
+
+    .vr-feedback-list p {
+        grid-column: 2;
+    }
+
+
+    .vr-decisions article {
+        padding: 30px;
+    }
+
+
+    .vr-decisions h3 {
+        font-size: 21px;
+    }
+
+
+    .vr-conclusion {
+        padding: 110px 0;
+    }
+
+}
