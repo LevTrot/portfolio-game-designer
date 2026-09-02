@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Дизайнерские решения — Lev.TrotSky</title>
+
+    <link rel="icon" type="image/png" href="../../assets/icons/logo.png">
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/design-decisions.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <a href="../index.html" class="logo">
+        Lev<span>.</span>TrotSky
+    </a>
+
+    <nav class="navigation">
+        <a href="../../index.html#about">Обо мне</a>
+        <a href="../../index.html#portfolio">Портфолио</a>
+        <a href="../../pages/resume.html">Резюме</a>
+    </nav>
+
+    <button class="menu-button" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+
+<main class="design-page">
+
+    <!-- HERO -->
+
+    <section class="design-hero">
+
+        <div class="design-hero-top">
+            <span>GAME DESIGN — DESIGN BREAKDOWNS</span>
+            <span>08 РЕШЕНИЙ</span>
+        </div>
+
+        <div class="design-hero-content">
+
+            <div class="design-hero-number">
+                ?!
+            </div>
+
+            <div class="design-hero-text">
+
+                <h1>
+                    Дизайнерские<br>
+                    решения
+                </h1>
+
+                <p>
+                    Короткие разборы игровых решений:
+                    какую проблему они решают, как устроены
+                    и почему работают.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+
+    <section class="design-intro">
+
+        <div class="section-label">
+            01 / ПОДХОД
+        </div>
+
+        <div class="intro-content">
+
+            <h2>
+                Хорошая механика<br>
+                начинается с проблемы.
+            </h2>
+
+            <p>
+                В этих разборах я смотрю не только на саму механику,
+                но и на задачу, которую она должна решать.
+                Иногда это удержание игрока, иногда контроль
+                сложности, иногда баланс между риском и наградой.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CASES -->
+
+    <section class="design-cases">
+
+        <!-- CASE 01 -->
+
+        <article class="decision-card">
+
+            <div class="decision-number">
+                01
+            </div>
+
+            <div class="decision-content">
+
+                <div class="decision-heading">
+
+                    <span class="decision-type">
+                        GAME LOOP
+                    </span>
+
+                    <h2>
+                        Лут как часть
+                        игрового цикла
+                    </h2>
+
+                </div>
+
+                <div class="decision-grid">
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            ПРОБЛЕМА
+                        </span>
+
+                        <p>
+                            Если лут существует только как награда,
+                            его ценность быстро снижается. Игрок
+                            получает предмет, продает его
+                            и со временем теряет интерес к добыче как части
+                            игрового процесса.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            РЕШЕНИЕ
+                        </span>
+
+                        <p>
+                            Сделать добычу одновременно наградой
+                            и инструментом для следующего рейда, побуждая отправиться в следующий рейд, чтобы реализовать накопленное.
+                            Игрок использует полученное снаряжение,
+                            рискует потерять его, находит что-то новое и снова вовлекается в игровой цикл.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block decision-result">
+
+                        <span class="block-label">
+                            ЭФФЕКТ
+                        </span>
+
+                        <p>
+                            Лут начинает работать не только как
+                            вознаграждение, но и как топливо игрового
+                            цикла: 
+                            <strong>рейд → добыча → применение →
+                            новый рейд.</strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <a href="../multiplayer/economy.html" class="decision-link">
+                    Кейс: экономика
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CASE 02 -->
+
+        <article class="decision-card">
+
+            <div class="decision-number">
+                02
+            </div>
+
+            <div class="decision-content">
+
+                <div class="decision-heading">
+
+                    <span class="decision-type">
+                        PROGRESSION
+                    </span>
+
+                    <h2>
+                        Прогрессия как
+                        дозатор контента
+                    </h2>
+
+                </div>
+
+                <div class="decision-grid">
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            ПРОБЛЕМА
+                        </span>
+
+                        <p>
+                            Большая игра может сразу предложить игроку
+                            десятки механик, предметов, режимов и систем.
+                            Вместо свободы это легко превращается
+                            в перегрузку.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            РЕШЕНИЕ
+                        </span>
+
+                        <p>
+                            Ограничивать доступ к контенту и постепенно
+                            открывать новые возможности. Первые уровни
+                            знакомят с базовыми механиками, следующие
+                            добавляют новые системы и только после десятка часов, игрок получает полный объём контента.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block decision-result">
+
+                        <span class="block-label">
+                            ЭФФЕКТ
+                        </span>
+
+                        <p>
+                            Игрок не получает всю игру одновременно.
+                            Каждый новый уровень становится небольшой
+                            порцией нового контента и одновременно
+                            следующей целью. Благодаря этому, игрок равномерно изучает новый контент и привыкает к нему, не перегружаясь от переизбытка систем и механик.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <a href="../multiplayer/progression.html" class="decision-link">
+                    Кейс: прогрессия
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CASE 03 -->
+
+        <article class="decision-card">
+
+            <div class="decision-number">
+                03
+            </div>
+
+            <div class="decision-content">
+
+                <div class="decision-heading">
+
+                    <span class="decision-type">
+                        LIVE OPS
+                    </span>
+
+                    <h2>
+                        Маленькие обновления
+                        между большими
+                    </h2>
+
+                </div>
+
+                <div class="decision-grid">
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            ПРОБЛЕМА
+                        </span>
+
+                        <p>
+                            Если новый контент появляется только
+                            во время крупных обновлений, между ними
+                            возникает длинный период без изменений.
+                            Даже большое обновление со временем
+                            перестаёт ощущаться новым.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            РЕШЕНИЕ
+                        </span>
+
+                        <p>
+                            Разделять крупные релизы небольшими
+                            обновлениями: новым оружием, активностью,
+                            небольшим ивентом, испытаниями или
+                            изменением незначительных механик.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block decision-result">
+
+                        <span class="block-label">
+                            ЭФФЕКТ
+                        </span>
+
+                        <p>
+                            Игрок чаще получает повод вернуться в игру.
+                            Контент лучше распределяется во времени,
+                            а новые обновления не приходится
+                            слишком долго.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <a href="../multiplayer/updates.html" class="decision-link">
+                    Кейс: обновления
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CASE 04 -->
+
+        <article class="decision-card">
+
+            <div class="decision-number">
+                04
+            </div>
+
+            <div class="decision-content">
+
+                <div class="decision-heading">
+
+                    <span class="decision-type">
+                        SOCIAL DESIGN
+                    </span>
+
+                    <h2>
+                        Социальная игра
+                        как причина вернуться
+                    </h2>
+
+                </div>
+
+                <div class="decision-grid">
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            ПРОБЛЕМА
+                        </span>
+
+                        <p>
+                            Если вся мотивация игрока завязана
+                            исключительно на одиночных игровых механиках, после его
+                            прохождения ценность возвращения
+                            постепенно снижается, а цели игрока иссекают.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            РЕШЕНИЕ
+                        </span>
+
+                        <p>
+                            Создавать ситуации и механики, в которых игроку
+                            выгодно взаимодействовать с другими:
+                            отряды, фракции, совместные задачи,
+                            бонусы за командную игру и общие цели.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block decision-result">
+
+                        <span class="block-label">
+                            ЭФФЕКТ
+                        </span>
+
+                        <p>
+                            Появляется дополнительная причина
+                            возвращаться в игру — не только ради
+                            награды или нового контента, но и ради
+                            совместной игры с другими людьми и формируется социальная привязанность. 
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <a href="../../pages/multiplayer.html" class="decision-link">
+                    Кейс: онлайн-проект
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CASE 05 -->
+
+        <article class="decision-card">
+
+            <div class="decision-number">
+                05
+            </div>
+
+            <div class="decision-content">
+
+                <div class="decision-heading">
+
+                    <span class="decision-type">
+                        WEAPON BALANCE
+                    </span>
+
+                    <h2>
+                        Сильное оружие
+                        не всегда дизбаланс
+                    </h2>
+
+                </div>
+
+                <div class="decision-grid">
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            ПРОБЛЕМА
+                        </span>
+
+                        <p>
+                            Если все характеристики оружия находятся
+                            около среднего значения, оно может не иметь
+                            чёткой роли. Если же просто сделать оружие
+                            сильнее остальных, оно быстро становится
+                            очевидным выбором.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            РЕШЕНИЕ
+                        </span>
+
+                        <p>
+                            Дать оружию выраженное преимущество,
+                            но компенсировать его недостатком.
+                            Например, низкий ТТК в бою
+                            может сочетаться с сильной отдачей и низкой скоростью пули,
+                            затрудняющей стрельбу на дистанции и повышающий требование к мастерству игрока.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block decision-result">
+
+                        <span class="block-label">
+                            ЭФФЕКТ
+                        </span>
+
+                        <p>
+                            Оружие остаётся привлекательным,
+                            но не ультимативным решением.
+                            Игрок получает возможность раскрыть
+                            сильную сторону оружия, лишь научившись
+                            компенсировать его недостатки.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <a href="../multiplayer/weapon.html" class="decision-link">
+                    Кейс: оружие
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CASE 06 -->
+
+        <article class="decision-card">
+
+            <div class="decision-number">
+                06
+            </div>
+
+            <div class="decision-content">
+
+                <div class="decision-heading">
+
+                    <span class="decision-type">
+                        EVENTS
+                    </span>
+
+                    <h2>
+                        Ивент как демонстрация
+                        нового обновления
+                    </h2>
+
+                </div>
+
+                <div class="decision-grid">
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            ПРОБЛЕМА
+                        </span>
+
+                        <p>
+                            Новое обновление может пройти мимо части
+                            аудитории. Игрок не всегда сразу замечает
+                            новые механики или понимает, зачем
+                            возвращаться в игру.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            РЕШЕНИЕ
+                        </span>
+
+                        <p>
+                            Связать часть нового контента с временным
+                            событием. Ивент становится поводом попробовать
+                            обновление и одновременно знакомит игрока
+                            с его новыми механиками.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block decision-result">
+
+                        <span class="block-label">
+                            ЭФФЕКТ
+                        </span>
+
+                        <p>
+                            Обновление получает дополнительную точку
+                            входа. За счёт временного характера события
+                            новый контент ощущается более значимым,
+                            а ушедшему игроку проще дать повод вернуться.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <a href="../narrative/event.html" class="decision-link">
+                    Кейс: внутриигровой ивент
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CASE 07 -->
+
+        <article class="decision-card">
+
+            <div class="decision-number">
+                07
+            </div>
+
+            <div class="decision-content">
+
+                <div class="decision-heading">
+
+                    <span class="decision-type">
+                        ENDGAME
+                    </span>
+
+                    <h2>
+                        Прогрессия после
+                        максимального уровня
+                    </h2>
+
+                </div>
+
+                <div class="decision-grid">
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            ПРОБЛЕМА
+                        </span>
+
+                        <p>
+                            Игрок достигает максимального уровня,
+                            закрывает основные ветки прогрессии
+                            и больше не видит понятной долгосрочной
+                            цели.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            РЕШЕНИЕ
+                        </span>
+
+                        <p>
+                            Перенести мотивацию с уровня персонажа
+                            на другие системы: внутриигровые испытания, мастерство,
+                            накопление опыта ради косметических наград,
+                            редкие достижения и особые награды.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block decision-result">
+
+                        <span class="block-label">
+                            ЭФФЕКТ
+                        </span>
+
+                        <p>
+                            Максимальный уровень становится не концом
+                            прогрессии, а переходом к другому типу целей.
+                            Ветеран продолжает развиваться, не получая
+                            бесконечного прямого усиления персонажа, но приобетая новые долгосрочные цели.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <a href="../multiplayer/progression.html" class="decision-link">
+                    Кейс: прогрессия
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CASE 08 -->
+
+        <article class="decision-card">
+
+            <div class="decision-number">
+                08
+            </div>
+
+            <div class="decision-content">
+
+                <div class="decision-heading">
+
+                    <span class="decision-type">
+                        PLAYER SEGMENTATION
+                    </span>
+
+                    <h2>
+                        Разделение новичков
+                        и ветеранов
+                    </h2>
+
+                </div>
+
+                <div class="decision-grid">
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            ПРОБЛЕМА
+                        </span>
+
+                        <p>
+                            Если новичок и опытный игрок получают
+                            доступ к одним и тем же территориям,
+                            новичок оказывается в заведомо невыгодной
+                            ситуации. При этом ветерану может быть
+                            слишком выгодно возвращаться в стартовый
+                            контент.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block">
+
+                        <span class="block-label">
+                            РЕШЕНИЕ
+                        </span>
+
+                        <p>
+                            Разделить часть игрового пространства
+                            и активностей по уровню прогрессии.
+                            Новичок получает собственную безопасную
+                            среду для обучения, а опытный игрок —
+                            доступ к более сложному и прибыльному
+                            контенту.
+                        </p>
+
+                    </div>
+
+                    <div class="decision-block decision-result">
+
+                        <span class="block-label">
+                            ЭФФЕКТ
+                        </span>
+
+                        <p>
+                            Новичок осваивает игру без постоянного
+                            давления ветеранов, а высокоуровневый
+                            игрок получает собственную зону риска
+                            и наград. При этом стартовый контент
+                            не превращается в лёгкий источник прибыли.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <a href="../multiplayer/balance.html" class="decision-link">
+                    Кейс: баланс
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- CONCLUSION -->
+
+    <section class="design-conclusion">
+
+        <div class="section-label">
+            02 / ИТОГ
+        </div>
+
+        <div class="conclusion-content">
+
+            <h2>
+                Не механика<br>
+                ради механики.
+            </h2>
+
+            <p>
+                Для меня дизайнерское решение начинается
+                с конкретной проблемы игрока или проекта.
+                Механика — это инструмент, а не конечная цель.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer class="site-footer">
+
+    <span>© 2026 ЛЕВ ЛИТВИНЦЕВ</span>
+
+    <div class="fixed-contacts">
+        <a
+            href="https://hh.ru/resume/a067a1a8ff0fbab6610039ed1f484973465476"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            HH.ru <span>↗</span>
+        </a>
+
+        <a
+            href="http://t.me/LiLTrotSky"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Telegram <span>↗</span>
+        </a>
+
+        <a href="../../pages/resume.html">
+            Резюме <span>↗</span>
+        </a>
+    </div>
+
+    <span>ПОРТФОЛИО ГЕЙМ-ДИЗАЙНЕРА</span>
+
+</footer>
+
+</body>
+</html>

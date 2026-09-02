@@ -1,0 +1,392 @@
+/* =========================================
+   DESIGN DECISIONS
+========================================= */
+
+.design-page {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.design-hero {
+    padding: 150px 5vw 110px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.design-hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 100px;
+
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+}
+
+.design-hero-content {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 70px;
+
+    max-width: 1400px;
+}
+
+.design-hero-number {
+    font-size: 150px;
+    line-height: 0.8;
+    font-weight: 300;
+
+    color: rgba(255, 255, 255, 0.08);
+}
+
+.design-hero-text {
+    max-width: 850px;
+}
+
+.design-hero-text h1 {
+    margin: 0 0 35px;
+
+    font-size: clamp(60px, 8vw, 125px);
+    line-height: 0.88;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+}
+
+.design-hero-text p {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.design-intro {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 70px;
+
+    padding: 120px 5vw;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-label {
+    color: rgba(255, 255, 255, 0.3);
+
+    font-size: 10px;
+    letter-spacing: 0.18em;
+}
+
+.intro-content {
+    max-width: 900px;
+}
+
+.intro-content h2 {
+    margin: 0 0 35px;
+
+    font-size: clamp(40px, 5vw, 75px);
+    line-height: 0.95;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+}
+
+.intro-content p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   CASES
+========================================= */
+
+.design-cases {
+    width: 100%;
+}
+
+.decision-card {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 70px;
+
+    padding: 100px 5vw;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.decision-number {
+    font-size: 90px;
+    line-height: 0.8;
+    font-weight: 300;
+
+    color: rgba(255, 255, 255, 0.12);
+}
+
+.decision-content {
+    max-width: 1100px;
+}
+
+.decision-heading {
+    margin-bottom: 65px;
+}
+
+.decision-type {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: rgba(255, 255, 255, 0.3);
+
+    font-size: 10px;
+    letter-spacing: 0.18em;
+}
+
+.decision-heading h2 {
+    max-width: 800px;
+
+    margin: 0;
+
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 0.95;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+}
+
+.decision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.decision-block {
+    min-height: 210px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.block-label {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: rgba(255, 255, 255, 0.3);
+
+    font-size: 9px;
+    letter-spacing: 0.18em;
+}
+
+.decision-block p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.decision-block strong {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+}
+
+.decision-result {
+    border-top-color: rgba(255, 255, 255, 0.3);
+}
+
+.decision-result p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.decision-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 45px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 11px;
+    letter-spacing: 0.08em;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        gap 0.2s ease;
+}
+
+.decision-link span {
+    font-size: 15px;
+}
+
+.decision-link:hover {
+    color: #fff;
+    gap: 18px;
+}
+
+
+/* =========================================
+   CONCLUSION
+========================================= */
+
+.design-conclusion {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 70px;
+
+    padding: 140px 5vw 180px;
+}
+
+.conclusion-content {
+    max-width: 900px;
+}
+
+.conclusion-content h2 {
+    margin: 0 0 40px;
+
+    font-size: clamp(50px, 7vw, 100px);
+    line-height: 0.9;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+}
+
+.conclusion-content p {
+    max-width: 600px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .design-hero {
+        padding: 120px 6vw 80px;
+    }
+
+    .design-hero-top {
+        margin-bottom: 70px;
+    }
+
+    .design-hero-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .design-hero-number {
+        font-size: 80px;
+    }
+
+    .design-hero-text h1 {
+        font-size: clamp(52px, 14vw, 90px);
+    }
+
+
+    .design-intro {
+        grid-template-columns: 1fr;
+        gap: 45px;
+
+        padding: 80px 6vw;
+    }
+
+
+    .decision-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+        padding: 80px 6vw;
+    }
+
+    .decision-number {
+        font-size: 65px;
+    }
+
+    .decision-heading {
+        margin-bottom: 50px;
+    }
+
+    .decision-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .decision-block {
+        min-height: auto;
+    }
+
+
+    .design-conclusion {
+        grid-template-columns: 1fr;
+        gap: 45px;
+
+        padding: 90px 6vw 120px;
+    }
+
+    .conclusion-content h2 {
+        font-size: clamp(50px, 13vw, 80px);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .design-hero {
+        padding-top: 100px;
+    }
+
+    .design-hero-top {
+        font-size: 8px;
+    }
+
+    .design-hero-text p {
+        font-size: 15px;
+    }
+
+    .decision-card {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .decision-heading h2 {
+        font-size: 42px;
+    }
+
+    .decision-block p {
+        font-size: 14px;
+    }
+
+    .decision-link {
+        margin-top: 35px;
+    }
+}
